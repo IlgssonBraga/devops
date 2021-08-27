@@ -7,4 +7,4 @@ metadata:
 spec:
   containers:
     - name: nodeserver
-      image: "ilgssonbraga/hello-nodejs-kind"
+      image: "ilgssonbraga/hello-nodejs-kind:v3"
