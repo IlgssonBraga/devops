@@ -17,4 +17,4 @@ spec:
     spec:
       containers:
         - name: nodeserver
-          image: "ilgssonbraga/hello-nodejs-kind:v3"
+          image: "ilgssonbraga/hello-nodejs-kind:v5"
