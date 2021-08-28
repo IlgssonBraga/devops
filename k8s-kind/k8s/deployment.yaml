@@ -18,6 +18,6 @@ spec:
       containers:
         - name: nodeserver
           image: "ilgssonbraga/hello-nodejs-kind:v5"
-          env: 
-            - name: NAME
-              value: "Ilgsson Braga"
+          envFrom:
+            - configMapRef: 
+                name: nodeserver-env
