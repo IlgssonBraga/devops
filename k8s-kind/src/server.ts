@@ -6,7 +6,6 @@ dotenv.config();
 const app = express();
 
 app.get("/", (req, res) => {
-  //   const greetings = `<h1>Hello, ${process.env.NAME}!!!</h1>`;
   const data = readFileSync(join(__dirname, "../myfamily/myfamily.txt"), {
     encoding: "utf8",
     flag: "r",
@@ -15,6 +14,13 @@ app.get("/", (req, res) => {
   <h3>Membros da família</h3>
   ${data}`);
 });
+
+app.get("/secret", (req, res) => {
+  const user = process.env.USER;
+  const password = process.env.PASSWORD;
+  return res.send(`User: ${user} <br/> Password: ${password}`);
+});
+
 
 app.listen(3333);
  
