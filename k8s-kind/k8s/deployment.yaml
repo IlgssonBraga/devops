@@ -17,7 +17,17 @@ spec:
     spec:
       containers:
         - name: nodeserver
-          image: "ilgssonbraga/hello-nodejs-kind:v5"
+          image: "ilgssonbraga/hello-nodejs-kind:v6.1"
           envFrom:
             - configMapRef: 
                 name: nodeserver-env
+          volumeMounts:
+            - mountPath: "/app/myfamily"
+              name:  config
+      volumes:
+        - name: config
+          configMap: 
+            name: configmap-family
+            items:
+            - key: members
+              path: "myfamily.txt"
