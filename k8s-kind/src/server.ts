@@ -24,10 +24,7 @@ app.get("/secret", (req, res) => {
 });
 
 app.get("/healthz", (req, res) => {
-  if (
-    (Date.now() - startExecDate) / 1000 < 10 ||
-    (Date.now() - startExecDate) / 1000 > 30
-  ) {
+  if ((Date.now() - startExecDate) / 1000 < 10) {
     res.status(500).json({ error: "Passou de 25 segundos" });
   } else {
     res.send(
