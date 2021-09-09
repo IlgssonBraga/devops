@@ -58,7 +58,12 @@ spec:
           volumeMounts:
             - mountPath: "/app/myfamily"
               name:  config
+            - mountPath: "/app/pvc"
+              name: nodejsserver-pvc
       volumes:
+        - name: nodejsserver-pvc
+          persistentVolumeClaim:
+            claimName: nodejsserver-pvc
         - name: config
           configMap: 
             name: configmap-family
